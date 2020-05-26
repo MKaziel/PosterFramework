@@ -173,6 +173,6 @@ class __TwigTemplate_8835060e13cb395b9786537c27ffbd3a3144d7c1921b20f43afc2ea34a7
         {% block javascripts %}{% endblock %}
     </body>
 </html>
-", "base.html.twig", "C:\\wamp64\\www\\PosterFramework\\templates\\base.html.twig");
+", "base.html.twig", "D:\\Logiciels\\wamp64\\www\\public_html\\PosterFramework\\templates\\base.html.twig");
     }
 }
