@@ -85,14 +85,19 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <div>
+        echo "    <div class=\"banner\">
         <h1>Geeps Poster Printing Center</h1>
     </div>
     <div class='container'>
-        
         <form>
             <input type=\"text\" placeholder=\"Votre Nom\" /> 
+            <input type=\"text\" placeholder=\"Votre Prénom\" />
+            <input type=\"text\" placeholder=\"Votre Nom\" />  
         </form>
+        ";
+        // line 15
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 15, $this->source); })()), 'form');
+        echo "
     </div>
 ";
         
@@ -115,7 +120,7 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  99 => 15,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -125,16 +130,18 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
 {% block title %}Poster Printing Center!{% endblock %}
 
 {% block body %}
-    <div>
+    <div class=\"banner\">
         <h1>Geeps Poster Printing Center</h1>
     </div>
     <div class='container'>
-        
         <form>
             <input type=\"text\" placeholder=\"Votre Nom\" /> 
+            <input type=\"text\" placeholder=\"Votre Prénom\" />
+            <input type=\"text\" placeholder=\"Votre Nom\" />  
         </form>
+        {{ form(form) }}
     </div>
 {% endblock %}
-", "default/index.html.twig", "C:\\wamp64\\www\\PosterFramework\\templates\\default\\index.html.twig");
+", "default/index.html.twig", "D:\\Logiciels\\wamp64\\www\\public_html\\PosterFramework\\templates\\default\\index.html.twig");
     }
 }

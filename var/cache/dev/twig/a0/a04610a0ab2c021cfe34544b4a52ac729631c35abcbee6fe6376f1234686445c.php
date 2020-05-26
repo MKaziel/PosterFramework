@@ -97,6 +97,6 @@ class __TwigTemplate_27d826d20dc7ee34edc459b3a2ef6a505117af2e307f050dc17176e0eb6
         </div>
     </div>
 </div>
-", "@WebProfiler/Profiler/header.html.twig", "C:\\wamp64\\www\\PosterFramework\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\header.html.twig");
+", "@WebProfiler/Profiler/header.html.twig", "D:\\Logiciels\\wamp64\\www\\public_html\\PosterFramework\\vendor\\symfony\\web-profiler-bundle\\Resources\\views\\Profiler\\header.html.twig");
     }
 }
