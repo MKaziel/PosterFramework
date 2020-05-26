@@ -1,6 +1,7 @@
 <?php
 
-namespace ContainerXEXpQ1g;
+namespace ContainerXIfiSCp;
+
 
 use Symfony\Component\DependencyInjection\Argument\RewindableGenerator;
 use Symfony\Component\DependencyInjection\ContainerInterface;
@@ -39,6 +40,7 @@ class App_KernelDevDebugContainer extends Container
         ];
         $this->methodMap = [
             'App\\Controller\\DefaultController' => 'getDefaultControllerService',
+            'App\\Controller\\TestController' => 'getTestControllerService',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\RedirectController' => 'getRedirectControllerService',
             'Symfony\\Bundle\\FrameworkBundle\\Controller\\TemplateController' => 'getTemplateControllerService',
             'cache.app' => 'getCache_AppService',
@@ -418,33 +420,24 @@ class App_KernelDevDebugContainer extends Container
 
         $this->services['App\\Controller\\DefaultController'] = $instance = new \App\Controller\DefaultController();
 
-        $instance->setContainer((new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
-            'doctrine' => ['services', 'doctrine', 'getDoctrineService', false],
-            'form.factory' => ['services', 'form.factory', 'getForm_FactoryService', false],
-            'http_kernel' => ['services', 'http_kernel', 'getHttpKernelService', false],
-            'parameter_bag' => ['privates', 'parameter_bag', 'getParameterBagService', false],
-            'request_stack' => ['services', 'request_stack', 'getRequestStackService', false],
-            'router' => ['services', 'router', 'getRouterService', false],
-            'security.authorization_checker' => ['services', 'security.authorization_checker', 'getSecurity_AuthorizationCheckerService', false],
-            'security.csrf.token_manager' => ['services', 'security.csrf.token_manager', 'getSecurity_Csrf_TokenManagerService', false],
-            'security.token_storage' => ['services', 'security.token_storage', 'getSecurity_TokenStorageService', false],
-            'serializer' => ['services', 'serializer', 'getSerializerService', false],
-            'session' => ['services', 'session', 'getSessionService', false],
-            'twig' => ['services', 'twig', 'getTwigService', false],
-        ], [
-            'doctrine' => '?',
-            'form.factory' => '?',
-            'http_kernel' => '?',
-            'parameter_bag' => '?',
-            'request_stack' => '?',
-            'router' => '?',
-            'security.authorization_checker' => '?',
-            'security.csrf.token_manager' => '?',
-            'security.token_storage' => '?',
-            'serializer' => '?',
-            'session' => '?',
-            'twig' => '?',
-        ]))->withContext('App\\Controller\\DefaultController', $this));
+        $instance->setContainer(($this->privates['.service_locator.pNNo5z3'] ?? $this->get_ServiceLocator_PNNo5z3Service())->withContext('App\\Controller\\DefaultController', $this));
+
+        return $instance;
+    }
+
+    /**
+     * Gets the public 'App\Controller\TestController' shared autowired service.
+     *
+     * @return \App\Controller\TestController
+     */
+    protected function getTestControllerService()
+    {
+        include_once \dirname(__DIR__, 4).'\\vendor\\symfony\\framework-bundle\\Controller\\AbstractController.php';
+        include_once \dirname(__DIR__, 4).'\\src\\Controller\\TestController.php';
+
+        $this->services['App\\Controller\\TestController'] = $instance = new \App\Controller\TestController();
+
+        $instance->setContainer(($this->privates['.service_locator.pNNo5z3'] ?? $this->get_ServiceLocator_PNNo5z3Service())->withContext('App\\Controller\\TestController', $this));
 
         return $instance;
     }
@@ -1640,6 +1633,42 @@ class App_KernelDevDebugContainer extends Container
         $a->setLogger($b);
 
         return $this->privates['.debug.http_client'] = new \Symfony\Component\HttpClient\TraceableHttpClient($a);
+    }
+
+    /**
+     * Gets the private '.service_locator.pNNo5z3' shared service.
+     *
+     * @return \Symfony\Component\DependencyInjection\ServiceLocator
+     */
+    protected function get_ServiceLocator_PNNo5z3Service()
+    {
+        return $this->privates['.service_locator.pNNo5z3'] = new \Symfony\Component\DependencyInjection\Argument\ServiceLocator($this->getService, [
+            'doctrine' => ['services', 'doctrine', 'getDoctrineService', false],
+            'form.factory' => ['services', 'form.factory', 'getForm_FactoryService', false],
+            'http_kernel' => ['services', 'http_kernel', 'getHttpKernelService', false],
+            'parameter_bag' => ['privates', 'parameter_bag', 'getParameterBagService', false],
+            'request_stack' => ['services', 'request_stack', 'getRequestStackService', false],
+            'router' => ['services', 'router', 'getRouterService', false],
+            'security.authorization_checker' => ['services', 'security.authorization_checker', 'getSecurity_AuthorizationCheckerService', false],
+            'security.csrf.token_manager' => ['services', 'security.csrf.token_manager', 'getSecurity_Csrf_TokenManagerService', false],
+            'security.token_storage' => ['services', 'security.token_storage', 'getSecurity_TokenStorageService', false],
+            'serializer' => ['services', 'serializer', 'getSerializerService', false],
+            'session' => ['services', 'session', 'getSessionService', false],
+            'twig' => ['services', 'twig', 'getTwigService', false],
+        ], [
+            'doctrine' => '?',
+            'form.factory' => '?',
+            'http_kernel' => '?',
+            'parameter_bag' => '?',
+            'request_stack' => '?',
+            'router' => '?',
+            'security.authorization_checker' => '?',
+            'security.csrf.token_manager' => '?',
+            'security.token_storage' => '?',
+            'serializer' => '?',
+            'session' => '?',
+            'twig' => '?',
+        ]);
     }
 
     /**

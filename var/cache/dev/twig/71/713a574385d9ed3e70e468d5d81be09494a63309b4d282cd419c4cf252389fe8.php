@@ -85,13 +85,25 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <div>
+        echo "    <div class=\"banner\">
         <h1>Geeps Poster Printing Center</h1>
     </div>
     <div class='container'>
-        
         <form>
-            <input type=\"text\" placeholder=\"Votre Nom\" /> 
+            <input type=\"text\" placeholder=\"Nom\" /> 
+            <input type=\"text\" placeholder=\"Prénom\" />
+            <input type=\"text\" placeholder=\"Email\" /> 
+            <input type=\"text\" placeholder=\"Numéro de téléphone\" /> 
+            <input type=\"text\" placeholder=\"Batiment\" /> 
+            <input type=\"text\" placeholder=\"Entreprise\" /> 
+            <input type=\"text\" placeholder=\"Upload file\" /> 
+            <input type=\"text\" placeholder=\"printing format\" />
+            <input type=\"text\" placeholder=\"Date de livraison min\" /> <label>Date du jour + 2</label>  
+            <input type=\"text\" placeholder=\"Taille d'impression\"/>
+            <label>Autre taille d'impression</label>
+            
+            <input type=\"text\" placeholder=\"cm largeur\" /> x <input type=\"text\" placeholder=\"cm longeur\" /> 
+
         </form>
     </div>
 ";
@@ -125,13 +137,25 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
 {% block title %}Poster Printing Center!{% endblock %}
 
 {% block body %}
-    <div>
+    <div class=\"banner\">
         <h1>Geeps Poster Printing Center</h1>
     </div>
     <div class='container'>
-        
         <form>
-            <input type=\"text\" placeholder=\"Votre Nom\" /> 
+            <input type=\"text\" placeholder=\"Nom\" /> 
+            <input type=\"text\" placeholder=\"Prénom\" />
+            <input type=\"text\" placeholder=\"Email\" /> 
+            <input type=\"text\" placeholder=\"Numéro de téléphone\" /> 
+            <input type=\"text\" placeholder=\"Batiment\" /> 
+            <input type=\"text\" placeholder=\"Entreprise\" /> 
+            <input type=\"text\" placeholder=\"Upload file\" /> 
+            <input type=\"text\" placeholder=\"printing format\" />
+            <input type=\"text\" placeholder=\"Date de livraison min\" /> <label>Date du jour + 2</label>  
+            <input type=\"text\" placeholder=\"Taille d'impression\"/>
+            <label>Autre taille d'impression</label>
+            
+            <input type=\"text\" placeholder=\"cm largeur\" /> x <input type=\"text\" placeholder=\"cm longeur\" /> 
+
         </form>
     </div>
 {% endblock %}
