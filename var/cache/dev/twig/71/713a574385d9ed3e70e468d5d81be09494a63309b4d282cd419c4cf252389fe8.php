@@ -26,6 +26,7 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
 
         $this->blocks = [
             'title' => [$this, 'block_title'],
+            'stylesheet' => [$this, 'block_stylesheet'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -75,6 +76,27 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
     }
 
     // line 5
+    public function block_stylesheet($context, array $blocks = [])
+    {
+        $macros = $this->macros;
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheet"));
+
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheet"));
+
+        echo "  
+    <link>
+";
+        
+        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
+
+        
+        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
+
+    }
+
+    // line 9
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,25 +106,47 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
+        // line 10
         echo "    <div class=\"banner\">
         <h1>Geeps Poster Printing Center</h1>
     </div>
     <div class='container'>
         <form>
-            <input type=\"text\" placeholder=\"Nom\" /> 
-            <input type=\"text\" placeholder=\"Prénom\" />
-            <input type=\"text\" placeholder=\"Email\" /> 
-            <input type=\"text\" placeholder=\"Numéro de téléphone\" /> 
-            <input type=\"text\" placeholder=\"Batiment\" /> 
-            <input type=\"text\" placeholder=\"Entreprise\" /> 
-            <input type=\"text\" placeholder=\"Upload file\" /> 
-            <input type=\"text\" placeholder=\"printing format\" />
-            <input type=\"text\" placeholder=\"Date de livraison min\" /> <label>Date du jour + 2</label>  
-            <input type=\"text\" placeholder=\"Taille d'impression\"/>
-            <label>Autre taille d'impression</label>
-            
-            <input type=\"text\" placeholder=\"cm largeur\" /> x <input type=\"text\" placeholder=\"cm longeur\" /> 
+            <div>
+                <div>
+                    <input type=\"text\" placeholder=\"Nom\" /> 
+                    <input type=\"text\" placeholder=\"Prénom\" />
+                </div>
+                
+                <div>
+                    <input type=\"text\" placeholder=\"Email\" /> 
+                    <input type=\"text\" placeholder=\"Numéro de téléphone\" /> 
+                </div>
+                <div>
+                    <input type=\"text\" placeholder=\"Batiment\" /> 
+                    <input type=\"text\" placeholder=\"Entreprise\" /> 
+                </div>
+                <div>
+                    <input type=\"text\" placeholder=\"Upload file\" /> 
+                    <input type=\"text\" placeholder=\"printing format\" />
+                </div>
+                <div>
+                    <div>
+                        <input type=\"text\" placeholder=\"Date de livraison min\" />
+                        <label>Date du jour + 2</label>  
+                    </div>
+                
+                    <input type=\"text\" placeholder=\"Taille d'impression\"/>
+                    <div>
+                        <label>Autre taille d'impression</label> <br/>
+                        <input type=\"text\" placeholder=\"cm largeur\" /> x <input type=\"text\" placeholder=\"cm longeur\" /> 
+                        
+                    </div>
+                
+                </div>
+                <label>Tous les champs sont requis</label>
+            </div>
+            <input type=\"submit\" value=\"Envoyer\" />
 
         </form>
     </div>
@@ -127,7 +171,7 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
 
     public function getDebugInfo()
     {
-        return array (  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  110 => 10,  100 => 9,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -136,25 +180,51 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
 
 {% block title %}Poster Printing Center!{% endblock %}
 
+{% block stylesheet %}  
+    <link>
+{% endblock %}
+
 {% block body %}
     <div class=\"banner\">
         <h1>Geeps Poster Printing Center</h1>
     </div>
     <div class='container'>
         <form>
-            <input type=\"text\" placeholder=\"Nom\" /> 
-            <input type=\"text\" placeholder=\"Prénom\" />
-            <input type=\"text\" placeholder=\"Email\" /> 
-            <input type=\"text\" placeholder=\"Numéro de téléphone\" /> 
-            <input type=\"text\" placeholder=\"Batiment\" /> 
-            <input type=\"text\" placeholder=\"Entreprise\" /> 
-            <input type=\"text\" placeholder=\"Upload file\" /> 
-            <input type=\"text\" placeholder=\"printing format\" />
-            <input type=\"text\" placeholder=\"Date de livraison min\" /> <label>Date du jour + 2</label>  
-            <input type=\"text\" placeholder=\"Taille d'impression\"/>
-            <label>Autre taille d'impression</label>
-            
-            <input type=\"text\" placeholder=\"cm largeur\" /> x <input type=\"text\" placeholder=\"cm longeur\" /> 
+            <div>
+                <div>
+                    <input type=\"text\" placeholder=\"Nom\" /> 
+                    <input type=\"text\" placeholder=\"Prénom\" />
+                </div>
+                
+                <div>
+                    <input type=\"text\" placeholder=\"Email\" /> 
+                    <input type=\"text\" placeholder=\"Numéro de téléphone\" /> 
+                </div>
+                <div>
+                    <input type=\"text\" placeholder=\"Batiment\" /> 
+                    <input type=\"text\" placeholder=\"Entreprise\" /> 
+                </div>
+                <div>
+                    <input type=\"text\" placeholder=\"Upload file\" /> 
+                    <input type=\"text\" placeholder=\"printing format\" />
+                </div>
+                <div>
+                    <div>
+                        <input type=\"text\" placeholder=\"Date de livraison min\" />
+                        <label>Date du jour + 2</label>  
+                    </div>
+                
+                    <input type=\"text\" placeholder=\"Taille d'impression\"/>
+                    <div>
+                        <label>Autre taille d'impression</label> <br/>
+                        <input type=\"text\" placeholder=\"cm largeur\" /> x <input type=\"text\" placeholder=\"cm longeur\" /> 
+                        
+                    </div>
+                
+                </div>
+                <label>Tous les champs sont requis</label>
+            </div>
+            <input type=\"submit\" value=\"Envoyer\" />
 
         </form>
     </div>

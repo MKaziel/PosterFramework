@@ -2,25 +2,51 @@
 
 {% block title %}Poster Printing Center!{% endblock %}
 
+{% block stylesheet %}  
+    <link>
+{% endblock %}
+
 {% block body %}
     <div class="banner">
         <h1>Geeps Poster Printing Center</h1>
     </div>
     <div class='container'>
         <form>
-            <input type="text" placeholder="Nom" /> 
-            <input type="text" placeholder="Prénom" />
-            <input type="text" placeholder="Email" /> 
-            <input type="text" placeholder="Numéro de téléphone" /> 
-            <input type="text" placeholder="Batiment" /> 
-            <input type="text" placeholder="Entreprise" /> 
-            <input type="text" placeholder="Upload file" /> 
-            <input type="text" placeholder="printing format" />
-            <input type="text" placeholder="Date de livraison min" /> <label>Date du jour + 2</label>  
-            <input type="text" placeholder="Taille d'impression"/>
-            <label>Autre taille d'impression</label>
-            
-            <input type="text" placeholder="cm largeur" /> x <input type="text" placeholder="cm longeur" /> 
+            <div>
+                <div>
+                    <input type="text" placeholder="Nom" /> 
+                    <input type="text" placeholder="Prénom" />
+                </div>
+                
+                <div>
+                    <input type="text" placeholder="Email" /> 
+                    <input type="text" placeholder="Numéro de téléphone" /> 
+                </div>
+                <div>
+                    <input type="text" placeholder="Batiment" /> 
+                    <input type="text" placeholder="Entreprise" /> 
+                </div>
+                <div>
+                    <input type="text" placeholder="Upload file" /> 
+                    <input type="text" placeholder="printing format" />
+                </div>
+                <div>
+                    <div>
+                        <input type="text" placeholder="Date de livraison min" />
+                        <label>Date du jour + 2</label>  
+                    </div>
+                
+                    <input type="text" placeholder="Taille d'impression"/>
+                    <div>
+                        <label>Autre taille d'impression</label> <br/>
+                        <input type="text" placeholder="cm largeur" /> x <input type="text" placeholder="cm longeur" /> 
+                        
+                    </div>
+                
+                </div>
+                <label>Tous les champs sont requis</label>
+            </div>
+            <input type="submit" value="Envoyer" />
 
         </form>
     </div>
