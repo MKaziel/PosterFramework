@@ -1,3 +1,4 @@
 # Symfony Zone de test à ignorer
 /src/Controller/TestController.php
 /templates/test/
+/var/*
