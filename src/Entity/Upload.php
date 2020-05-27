@@ -17,11 +17,13 @@ class Upload
      */
     private $id;
     private $file;
-    private $title;
-    public $email;
+    private $name;
+    private $firstname;
+    private $email;
 
-    public function getId(): ?int
-    {
+
+    //Zone pour les getteurs et les setteurs
+    public function getId(): ?int {
         return $this->id;
     }
 
@@ -34,16 +36,31 @@ class Upload
         return $this;
     }
 
-    public function getTitle(){
-        return $this->title;
+    public function getName(){
+        return $this->name;
     }
 
-    public function setTitle($newTitle){
-        $this->title = $newTitle;
+    public function setName($newName){
+        $this->name = $newName;
         return $this;
     }
 
+    public function getFirstName(){
+        return $this->firstname;
+    }
 
+    public function setFirstName($newName){
+        $this->firstname = $newName;
+        return $this;
+    }
+
+    public function getEmail() {
+		return $this->email;
+	}
+
+	public function setEmail($newEmail) {
+		$this->email = $newEmail;
+	}
 
     
 }
