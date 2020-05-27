@@ -20,6 +20,16 @@ class Upload
     private $name;
     private $firstname;
     private $email;
+    private $mobile;
+    private $building;
+    private $office;
+    public $printing_format;
+    public $printing_height;
+    public $printing_weight;
+    private $delivery_date;
+    public $comment;
+
+
 
 
     //Zone pour les getteurs et les setteurs
@@ -60,7 +70,29 @@ class Upload
 
 	public function setEmail($newEmail) {
 		$this->email = $newEmail;
+    }
+    
+    public function getMobile() {
+		return $this->mobile;
 	}
 
+	public function setMobile($newMobile) {
+		$this->mobile = $newMobile;
+	}
+
+    public function getBuilding() {
+		return $this->building;
+	}
+
+	public function setBuilding($newBuilding) {
+		$this->building = $newBuilding;
+    }
     
+    public function getOffice() {
+		return $this->office;
+	}
+
+	public function setOffice($newoffice) {
+		$this->office = $newoffice;
+    }
 }
