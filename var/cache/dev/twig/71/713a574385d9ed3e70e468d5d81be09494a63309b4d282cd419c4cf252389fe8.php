@@ -86,7 +86,7 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "stylesheet"));
 
         echo "  
-    <link>
+    <link rel=\"stylesheet\" href=\"../public/css/bootstrap.css\">
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -111,44 +111,14 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
         <h1>Geeps Poster Printing Center</h1>
     </div>
     <div class='container'>
-        <form>
-            <div>
-                <div>
-                    <input type=\"text\" placeholder=\"Nom\" /> 
-                    <input type=\"text\" placeholder=\"Prénom\" />
-                </div>
-                
-                <div>
-                    <input type=\"text\" placeholder=\"Email\" /> 
-                    <input type=\"text\" placeholder=\"Numéro de téléphone\" /> 
-                </div>
-                <div>
-                    <input type=\"text\" placeholder=\"Batiment\" /> 
-                    <input type=\"text\" placeholder=\"Entreprise\" /> 
-                </div>
-                <div>
-                    <input type=\"text\" placeholder=\"Upload file\" /> 
-                    <input type=\"text\" placeholder=\"printing format\" />
-                </div>
-                <div>
-                    <div>
-                        <input type=\"text\" placeholder=\"Date de livraison min\" />
-                        <label>Date du jour + 2</label>  
-                    </div>
-                
-                    <input type=\"text\" placeholder=\"Taille d'impression\"/>
-                    <div>
-                        <label>Autre taille d'impression</label> <br/>
-                        <input type=\"text\" placeholder=\"cm largeur\" /> x <input type=\"text\" placeholder=\"cm longeur\" /> 
-                        
-                    </div>
-                
-                </div>
-                <label>Tous les champs sont requis</label>
-            </div>
-            <input type=\"submit\" value=\"Envoyer\" />
-
-        </form>
+        ";
+        // line 52
+        echo "
+        ";
+        // line 53
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 53, $this->source); })()), 'form');
+        echo "
+        
     </div>
 ";
         
@@ -171,7 +141,7 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
 
     public function getDebugInfo()
     {
-        return array (  110 => 10,  100 => 9,  79 => 5,  60 => 3,  37 => 1,);
+        return array (  119 => 53,  116 => 52,  110 => 10,  100 => 9,  79 => 5,  60 => 3,  37 => 1,);
     }
 
     public function getSourceContext()
@@ -181,7 +151,7 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
 {% block title %}Poster Printing Center!{% endblock %}
 
 {% block stylesheet %}  
-    <link>
+    <link rel=\"stylesheet\" href=\"../public/css/bootstrap.css\">
 {% endblock %}
 
 {% block body %}
@@ -189,7 +159,7 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
         <h1>Geeps Poster Printing Center</h1>
     </div>
     <div class='container'>
-        <form>
+        {# <form method='post' action='../PosterFramework/'>
             <div>
                 <div>
                     <input type=\"text\" placeholder=\"Nom\" /> 
@@ -225,8 +195,11 @@ class __TwigTemplate_eee107632492b27fbf95d6981297360cac306d80bcd0c0af24acece55f3
                 <label>Tous les champs sont requis</label>
             </div>
             <input type=\"submit\" value=\"Envoyer\" />
+            
+        </form> #}
 
-        </form>
+        {{ form(form) }}
+        
     </div>
 {% endblock %}
 ", "default/index.html.twig", "C:\\wamp64\\www\\PosterFramework\\templates\\default\\index.html.twig");

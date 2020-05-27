@@ -17,6 +17,8 @@ class Upload
      */
     private $id;
     private $file;
+    private $title;
+    public $email;
 
     public function getId(): ?int
     {
@@ -29,6 +31,15 @@ class Upload
 
     public function setfile($newfile){
         $this->file = $newfile;
+        return $this;
+    }
+
+    public function getTitle(){
+        return $this->title;
+    }
+
+    public function setTitle($newTitle){
+        $this->title = $newTitle;
         return $this;
     }
 

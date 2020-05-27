@@ -11,7 +11,7 @@
         <h1>Geeps Poster Printing Center</h1>
     </div>
     <div class='container'>
-        <form>
+        {# <form method='post' action='../PosterFramework/'>
             <div>
                 <div>
                     <input type="text" placeholder="Nom" /> 
@@ -47,8 +47,10 @@
                 <label>Tous les champs sont requis</label>
             </div>
             <input type="submit" value="Envoyer" />
+            
+        </form> #}
 
-        </form>
         {{ form(form) }}
+        
     </div>
 {% endblock %}
