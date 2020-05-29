@@ -66,33 +66,41 @@ class Upload
 
     public function getEmail() {
 		return $this->email;
-	}
+	  }
 
-	public function setEmail($newEmail) {
-		$this->email = $newEmail;
+    public function setEmail($newEmail) {
+      $this->email = $newEmail;
     }
     
     public function getMobile() {
-		return $this->mobile;
-	}
+      return $this->mobile;
+    }
 
-	public function setMobile($newMobile) {
-		$this->mobile = $newMobile;
-	}
+    public function setMobile($newMobile) {
+      $this->mobile = $newMobile;
+    }
 
     public function getBuilding() {
-		return $this->building;
-	}
-
-	public function setBuilding($newBuilding) {
-		$this->building = $newBuilding;
+      return $this->building;
     }
-    
-    public function getOffice() {
-		return $this->office;
-	}
 
-	public function setOffice($newoffice) {
-		$this->office = $newoffice;
+    public function setBuilding($newBuilding) {
+      $this->building = $newBuilding;
+      }
+      
+    public function getOffice() {
+      return $this->office;
+    }
+
+    public function setOffice($newoffice) {
+      $this->office = $newoffice;
+      }
+
+    public function getDeliveryDate() {
+      return $this->delivery_date;
+    }
+
+    public function setDeliveryDate($newddate) {
+      $this->delivery_date = $newddate;
     }
 }
