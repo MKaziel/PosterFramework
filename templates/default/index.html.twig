@@ -1,17 +1,73 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Poster Printing Center!{% endblock %}
+{% block title %}
+  Poster Printing Center!
+{% endblock %}
 
-{% block stylesheet %}  
-    <link rel="stylesheet" href="../public/css/bootstrap.css">
+{% block stylesheet %}
+  <link rel="stylesheet" href="../public/css/bootstrap.css" />
 {% endblock %}
 
 {% block body %}
-    <div class="banner">
-        <h1>Geeps Poster Printing Center</h1>
+  <div class="banner">
+    <h1>
+      Geeps Poster Printing Center
+    </h1>
+  </div>
+
+  <div for=  id="formulaire" name="formulaire">
+    {# <fieldset>
+      {{ form(form) }}
+    </fieldset> #}
+
+    {{ form_start(form) }}
+    <div class="my-custom-class-for-errors">
+        {{ form_errors(form) }}
     </div>
 
-    <div id="formulaire" name="formulaire">
-        {{ form(form) }}
+    <div class="row">
+        <div class="col">
+            {{ form_row(form.name) }}
+        </div>
+        <div class="col" id="some-custom-id">
+            {{ form_row(form.firstname) }}
+        </div>
+          <div class="col" id="some-custom-id">
+            {{ form_row(form.email) }}
+        </div>
+        <div class="col" id="some-custom-id">
+            {{ form_row(form.mobile) }}
+        </div>
+         <div class="col" id="some-custom-id">
+            {{ form_row(form.building) }}
+        </div>
+        <div class="col" id="some-custom-id">
+            {{ form_row(form.office) }}
+        </div>
+        <div class="col" id="some-custom-id">
+            {{ form_row(form.file) }}
+        </div>
+        <div class="col" id="some-custom-id">
+            {{ form_row(form.delivery_date) }}
+        </div>
+        <div class="col" id="some-custom-id">
+            {{ form_row(form.printing_format) }}
+        </div>
+        <div class="col" id="some-custom-id">
+            {{ form_row(form.printing_height) }}
+        </div>
+        <div class="col" id="some-custom-id">
+            {{ form_row(form.printing_weight) }}
+        </div>
+        <div class="col" id="some-custom-id">
+            {{ form_row(form.comment) }}
+        </div>
+        <div class="col" id="some-custom-id">
+            {{ form_row(form.Submit) }}
+        </div>
+     
     </div>
+{{ form_end(form) }}
+ 
+  </div>
 {% endblock %}
