@@ -103,4 +103,12 @@ class Upload
     public function setDeliveryDate($newddate) {
       $this->delivery_date = $newddate;
     }
+
+    public function getPrintingFormat(){
+      return $this->printing_format;
+    }
+
+    public function getComment(){
+      return $this->comment;
+    }
 }
