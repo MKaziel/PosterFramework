@@ -108,6 +108,10 @@ button[type=submit] {
   font-size: 30px;
 }
 
+#personnalPrintingFormat{
+  visibility: hidden;
+}
+
 /* .footer {
   position: fixed;
   left: 0;
