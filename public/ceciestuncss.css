@@ -3,16 +3,34 @@ body {
     font-size: 90%;
     /* background-image: url("https://www.publicdomainpictures.net/pictures/130000/velka/abstract-magical-background.jpg"); */
 }
+header.page-header {
+  /* background-color: lightblue; */
+  display: flex;
+  height: 120px;
+  min-width: 120px;
+  align-items: center;
+  text-align: center;
+  color: lightblue;
+  text-shadow: #000 0 0 .2em;
+  margin-left: 600px;
+  margin-right: 600px;
+}
 
-.banner {
+header.page-header > h1 {
+  font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', cursive,
+      fantasy;
+  margin: 2%;
+}
+
+/* .banner {
     border: 1px solid powderblue;
     font-family: "Times New Roman", Times, serif;
     text-align: center;
     margin-top: 0px;
-    /* max-width: 700px; */
+    max-width: 700px;
     margin-left: 600px;
     margin-right: 600px;
-}
+} */
 
 .formEnd {
   background-color: red;
@@ -49,8 +67,8 @@ button[type=submit] {
 }
 
 button[type=submit]:hover, button[type=reset]:active {
-    background-color: #45a049;
-    box-shadow: 1px 1px 1px #45a049 inset;
+    background-color: #45a1ff;
+    box-shadow: 1px 1px 1px #45a1ff inset;
 }
 
 div {
