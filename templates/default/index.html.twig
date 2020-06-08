@@ -57,26 +57,30 @@
     </div>
 
     <div class="row">
-      <div class="col">
+      <div class="colFile">
         {{ form_row(form.file) }}
       </div>
-
-      <div class="col">
+  <div class="date">
         {{ form_row(form.delivery_date) }}
       </div>
+      
+        
+        
     </div>
 
     <div class="row">
       <div class="col">
         {{ form_row(form.printing_format) }}
       </div>
-      <div>
-        <div class="col">
+    
+       <div class="col">
           {{ form_row(form.printing_height) }}
         </div>
         <div class="col">
           {{ form_row(form.printing_weight) }}
         </div>
+      <div>
+     
         <div class="col">
         {{ form_row(form.Submit) }}
       </div>
