@@ -1,8 +1,10 @@
 body {
     font-family: "trebuchet ms", sans-serif;
     font-size: 90%;
+    margin: 0;
     /* background-image: url("https://www.publicdomainpictures.net/pictures/130000/velka/abstract-magical-background.jpg"); */
 }
+
 header.page-header {
   /* background-color: lightblue; */
   display: flex;
@@ -20,6 +22,10 @@ header.page-header > h1 {
   font: bold calc(1em + 2 * (100vw - 120px) / 100) 'Dancing Script', cursive,
       fantasy;
   margin: 2%;
+}
+
+.row{
+  width: 75%;
 }
 
 /* .banner {
@@ -144,6 +150,16 @@ button[type=submit] {
 #personnalPrintingFormat{
   visibility: hidden;
 }
+
+#personnalPrintingFormat > div{
+  display: inline-block;
+  width: 25%;
+  height: 100px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+
 
 /* .footer {
   position: fixed;

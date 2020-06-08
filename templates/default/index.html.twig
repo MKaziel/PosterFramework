@@ -71,37 +71,27 @@
         {{ form_row(form.printing_format) }}
       </div>
     
-       <div class="col">
-          {{ form_row(form.printing_height) }}
-        </div>
+      <div class="col">
         <div id="personnalPrintingFormat">
-          <div class="col">
-            {{ form_row(form.printing_height) }}
-          </div>
-          <div class="col">
-            {{ form_row(form.printing_weight) }}
-          </div>
+            {{ form_row(form.printing_height) }} <div> x </div> {{ form_row(form.printing_weight) }} 
         </div>
-      <div>
-        <div class="col">
-        {{ form_row(form.Submit) }}
-
       </div>
+    </div>
+      
 
-      <div class="row">
-        <div class="col">
-          {{ form_row(form.comment) }}
-        </div> 
+    <div class="row">
+      <div class="col">
+        {{ form_row(form.comment) }}
       </div>
+      <div class="col"> {# Div contenant le bouton submit afin d'envoyer les informations #}
+          {{ form_row(form.Submit) }} {# Cette div sert à placer la div contenant le bouton submit afin qu'il soit correctement positionner #}
+        </div>
+    </div>
 
-      {# Cette div sert à placer la div contenant le bouton submit afin qu'il soit correctement positionner #}
-      <div>
+      <div class="row"> 
+        
       </div>
-      {# Div contenant le bouton submit afin d'envoyer les informations #}
-      <div>
-        {{ form_row(form.Submit) }}
-      </div>  
-    {{ form_end(form) }}
+      {{ form_end(form) }}
   </div>
 
 {# <div class="footer">
