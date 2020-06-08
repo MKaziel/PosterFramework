@@ -31,11 +31,6 @@ class DefaultController extends AbstractController
 
         $form->handleRequest($request);
         if ($form -> isSubmitted() && $form->isValid()){
-            $file = $upload->getFile();
-            $filename = $file->getClientOriginalName();
-            $file->move($this->getParameter('upload_directory'),$filename);
-            $upload->setFile($filename);
-
             $today = date('Y-m-d');
 			// recuperation des données de la form
 	        $data 				 = $form->getData();
@@ -46,9 +41,14 @@ class DefaultController extends AbstractController
 	        $buildingBatiment 	 = $data->getBuilding();
 	        $office 			 = $data->getOffice();
 	        $uploadFile          = $data->getfile();
-	        $minimunDeleveryDate = $data->getDeliveryDate();
+	        $DeleveryDate 		 = $data->getDeliveryDate();
 	        $printingFormat 	 = $data->getPrintingFormat();
-	        $comment			 = $data->getComment();
+			$comment			 = $data->getComment();
+			//Récupération et paramétrage du fichier
+			$file = $upload->getFile();
+            $filename = $DeleveryDate->format('Y-m-d') . "_" . $firstname . "_" . $name . "_" . $file->getClientOriginalName();
+            $file->move($this->getParameter('upload_directory'),$filename);
+            $upload->setFile($filename);
 
             
 	        // vérification du printing format pour voir si on utilise un format déjà créer ou un custom 
