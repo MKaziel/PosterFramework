@@ -9,65 +9,123 @@
 {% endblock %}
 
 {% block body %}
-  <div class="banner">
+  {# <div class="banner">
     <h1>
       Geeps Poster Printing Center
     </h1>
-  </div>
+  </div> #}
+  
+<header class="page-header">
+    <h1> Geeps Poster Printing Center</h1>
+</header>
 
-  <div for=  id="formulaire" name="formulaire">
-    {# <fieldset>
-      {{ form(form) }}
-    </fieldset> #}
-
+  <div id="formulaire" name="formulaire">
     {{ form_start(form) }}
     <div class="my-custom-class-for-errors">
-        {{ form_errors(form) }}
+      {{ form_errors(form) }}
+    </div>
+
+<div class="grid-container">
+      <div class="row">
+        <div class="col">
+          {{ form_row(form.name) }}
+        </div>
+
+        <div class="col">
+          {{ form_row(form.firstname) }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          {{ form_row(form.email) }}
+        </div>
+
+        <div class="col">
+          {{ form_row(form.mobile) }}
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col">
+          {{ form_row(form.building) }}
+        </div>
+
+        <div class="col">
+          {{ form_row(form.office) }}
+        </div>
+      </div>
+
+
+    <div class="row">
+      <div class="colFile">
+        {{ form_row(form.file) }}
+      </div>
+      <div class="col">
+          {{ form_row(form.delivery_date) }}
+      </div>   
     </div>
 
     <div class="row">
-        <div class="col">
-            {{ form_row(form.name) }}
+      <div class="col">
+        {{ form_row(form.printing_format) }}
+      </div>
+    
+      <div class="col">
+        <div id="personnalPrintingFormat">
+            {{ form_row(form.printing_height) }} <div> x </div> {{ form_row(form.printing_weight) }} 
         </div>
-        <div class="col" id="some-custom-id">
-            {{ form_row(form.firstname) }}
-        </div>
-          <div class="col" id="some-custom-id">
-            {{ form_row(form.email) }}
-        </div>
-        <div class="col" id="some-custom-id">
-            {{ form_row(form.mobile) }}
-        </div>
-         <div class="col" id="some-custom-id">
-            {{ form_row(form.building) }}
-        </div>
-        <div class="col" id="some-custom-id">
-            {{ form_row(form.office) }}
-        </div>
-        <div class="col" id="some-custom-id">
-            {{ form_row(form.file) }}
-        </div>
-        <div class="col" id="some-custom-id">
-            {{ form_row(form.delivery_date) }}
-        </div>
-        <div class="col" id="some-custom-id">
-            {{ form_row(form.printing_format) }}
-        </div>
-        <div class="col" id="some-custom-id">
-            {{ form_row(form.printing_height) }}
-        </div>
-        <div class="col" id="some-custom-id">
-            {{ form_row(form.printing_weight) }}
-        </div>
-        <div class="col" id="some-custom-id">
-            {{ form_row(form.comment) }}
-        </div>
-        <div class="col" id="some-custom-id">
-            {{ form_row(form.Submit) }}
-        </div>
-     
+      </div>
     </div>
-{{ form_end(form) }}
- 
+      
+
+    <div class="row">
+      <div class="col">
+        {{ form_row(form.comment) }}
+      </div>
+      <div class="col"> {# Div contenant le bouton submit afin d'envoyer les informations #}
+          {{ form_row(form.Submit) }} {# Cette div sert à placer la div contenant le bouton submit afin qu'il soit correctement positionner #}
+        </div>
+    </div>
+
+      <div class="row"> 
+        
+      </div>
+      {{ form_end(form) }}
   </div>
+
+{# <div class="footer">
+  <p>Footer</p> #}
+
+
+   <footer>
+        <p> <link href="#"> Direction </link> : Claude Marchand <br>
+        <strong> GeePs</strong>
+        <br>
+        CNRS UMR8507 . CentralesSupélec  <br>
+        Université Paris-Sud . Sorbonne Universités <br> 
+        91190 Gif sur Yvette <br>
+        </p>
+        <p> @Copyright 2019 . GeePs <br>
+        This site is powred by Django
+        </p> 
+
+    </footer>
+
+</div>{% endblock %}
+
+{% block javascripts %}
+  <script type="text/javascript" src="./public/jquery-3.5.1.min.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function(){        
+        this.getElementById("upload_printing_format").value="";
+        $("#upload_printing_format").change(function(){
+          if(this.value == 3){
+            document.getElementById('personnalPrintingFormat').style.visibility = "visible";
+          } else {
+            document.getElementById('personnalPrintingFormat').style.visibility = "hidden";
+          }
+        })
+    })
+  </script>
 {% endblock %}

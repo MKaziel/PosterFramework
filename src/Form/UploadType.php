@@ -36,7 +36,8 @@ class UploadType extends AbstractType
             ->add('file', FileType::class,array(
                 'label' => 'Choisissez votre fichier'
             ))
-            ->add('delivery_date', DateType::class)
+            ->add('delivery_date', DateType::class, array(
+                'widget' => 'single_text'))
             ->add('printing_format', ChoiceType::class, [
                 'choices'  => [
                     'A0 (118,9 x 84,1 cm)' => 'A0 (118,9 x 84,1 cm)',
