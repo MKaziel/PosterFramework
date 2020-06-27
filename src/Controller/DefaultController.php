@@ -46,7 +46,7 @@ class DefaultController extends AbstractController
 			$comment			 = $data->getComment();
 			//Récupération et paramétrage du fichier
 			$file = $upload->getFile();
-            $filename = $DeleveryDate->format('Y-m-d') . "_" . $firstname . "_" . $name . "_" . $file->getClientOriginalName();
+			$filename = $DeleveryDate->format('Y-m-d') . "_" . $firstname . "_" . $name . "_" . $file->getClientOriginalName();
             $file->move($this->getParameter('upload_directory'),$filename);
             $upload->setFile($filename);
 
@@ -73,13 +73,14 @@ Votre demande d’impression du poster a bien été pris en compte.
 	      	Telephone : %s
 	      	Batiment %s
 	      	Office : %s
-	      	Format : %s';
+			Format : %s
+			comment: %s';
 
 	      	$titleFormat = '%s_%s_%s.%s';
 			
 	      	$file = sprintf($titleFormat, $today, $name, $firstname, $uploadFile);
 	      	
-			$body = sprintf($confirmationEmail, $name, $firstname, $name, $firstname, $email, $phone, $buildingBatiment, $office, $printingFormat);
+			$body = sprintf($confirmationEmail, $name, $firstname, $name, $firstname, $email, $phone, $buildingBatiment, $office, $printingFormat,$comment);
 
 
 			// Message pour le créateur de la demande, avec son sujet
@@ -108,19 +109,20 @@ Votre demande d’impression du poster a bien été pris en compte.
 	      	Telephone : %s
 	      	Batiment %s
 	      	Office : %s
-	      	Format : %s';
+			  Format : %s
+			  comment: %s';
 
 
-			$body = sprintf($geepsEmail, $today, $name, $firstname, $file, $name, $firstname, $email, $phone, $buildingBatiment, $office, $printingFormat);
+			$body = sprintf($geepsEmail, $today, $name, $firstname, $filename, $name, $firstname, $email, $phone, $buildingBatiment, $office, $printingFormat,$comment);
 
   			//Message addressé au Geeps, avec son sujet
   			$message = (new \Swift_Message('[GeePs Posters] Demande d’impression poster'))
 
 			// qui envoie l'email
-  			->setFrom("poster@geeps.centralesupelec.fr")
+  			->setFrom("poster@geeps.centralesupelec.fr") //
 
   			// qui recois l'email
-  			->setTo("poster@geeps.centralesupelec.fr")
+  			->setTo("asr@geeps.centralesupelec.fr") //
 
   			// le corps du mail créer plus haut
   			->setBody($body);
